@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using HomeBudgetWebApp.Models.Domain;
+using HomeBudgetWebApp.Models.Entities.Configuratations;
 
 namespace HomeBudgetWebApp.Models.Entities
 {
@@ -15,6 +16,11 @@ namespace HomeBudgetWebApp.Models.Entities
             : base("name=DefaultConnection")
         {
 
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new BudgetAccountConfiguration())
         }
     }
 }

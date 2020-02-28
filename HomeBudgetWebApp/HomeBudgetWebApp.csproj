@@ -180,6 +180,11 @@
     <Compile Include="Models\Domain\SubCategory.cs" />
     <Compile Include="Models\Domain\Transaction.cs" />
     <Compile Include="Models\Entities\BudgetDbContext.cs" />
+    <Compile Include="Models\Entities\Configuratations\BudgetAccountConfiguration.cs" />
+    <Compile Include="Models\Entities\Migration\202002281806447_InitModel.cs" />
+    <Compile Include="Models\Entities\Migration\202002281806447_InitModel.Designer.cs">
+      <DependentUpon>202002281806447_InitModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entities\Migration\Configuration.cs" />
     <Compile Include="Models\Enums\BudgetAccountType.cs" />
     <Compile Include="Models\Enums\TransactionType.cs" />
@@ -249,7 +254,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\Entities\Configuratations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -259,6 +263,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Models\Entities\Migration\202002281806447_InitModel.resx">
+      <DependentUpon>202002281806447_InitModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
