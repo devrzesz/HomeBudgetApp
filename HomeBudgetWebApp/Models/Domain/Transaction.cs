@@ -1,5 +1,6 @@
-﻿using HomeBudgetWebApp.Models.Enums;
-using System;
+﻿using System;
+using HomeBudgetWebApp.Models.Enums;
+using HomeBudgetWebApp.Models.Interfaces;
 
 namespace HomeBudgetWebApp.Models.Domain
 {
