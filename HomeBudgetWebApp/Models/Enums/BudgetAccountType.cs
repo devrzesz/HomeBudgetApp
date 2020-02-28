@@ -5,7 +5,7 @@ using System.Web;
 
 namespace HomeBudgetWebApp.Models.Enums
 {
-    public enum BudgetAccountTypes : byte
+    public enum BudgetAccountType : byte
     {
         Bank = 1,
         Pocket
