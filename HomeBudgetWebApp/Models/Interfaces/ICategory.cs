@@ -9,6 +9,5 @@ namespace HomeBudgetWebApp.Models.Interfaces
         string Name { get; set; }
 
         IEnumerable<Transaction> Transactions { get; set; }
-        IEnumerable<SubCategory> SubCategories { get; set; }
     }
 }
