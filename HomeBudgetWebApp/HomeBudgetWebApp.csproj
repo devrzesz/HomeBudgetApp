@@ -174,7 +174,18 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Domain\BudgetAccount.cs" />
+    <Compile Include="Models\Domain\Category.cs" />
+    <Compile Include="Models\Domain\Payee.cs" />
+    <Compile Include="Models\Domain\SubCategory.cs" />
+    <Compile Include="Models\Domain\Transaction.cs" />
+    <Compile Include="Models\Entities\BudgetDbContext.cs" />
+    <Compile Include="Models\Entities\Migration\Configuration.cs" />
+    <Compile Include="Models\Enums\BudgetAccountType.cs" />
+    <Compile Include="Models\Enums\TransactionType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Interfaces\ICategory.cs" />
+    <Compile Include="Models\Interfaces\IPayee.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -238,6 +249,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\Entities\Configuratations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
