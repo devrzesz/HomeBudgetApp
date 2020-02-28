@@ -1,7 +1,5 @@
-﻿using System;
+﻿using HomeBudgetWebApp.Models.Enums;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace HomeBudgetWebApp.Models.Domain
 {
@@ -11,7 +9,7 @@ namespace HomeBudgetWebApp.Models.Domain
         public string Name { get; set; }
         public float OpeningBalance { get; set; }
         public float Balance { get; set; }
-        public byte Type { get; set; }
+        public BudgetAccountType Type { get; set; }
 
         public ICollection<Transaction> Transactions { get; set; }
     }
