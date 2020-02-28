@@ -15,12 +15,12 @@ namespace HomeBudgetWebApp.Models.Entities
         public BudgetDbContext()
             : base("name=DefaultConnection")
         {
-
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new BudgetAccountConfiguration())
+            modelBuilder.Configurations.Add(new BudgetAccountConfiguration());
         }
     }
 }
