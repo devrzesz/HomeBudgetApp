@@ -12,9 +12,9 @@ namespace HomeBudgetWebApp.Models.Entities.Migration
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        OpeningBalance = c.Single(nullable: false),
-                        Balance = c.Single(nullable: false),
+                        Name = c.String(nullable: false, maxLength: 50),
+                        OpeningBalance = c.Single(),
+                        Balance = c.Single(),
                         Type = c.Byte(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
@@ -28,11 +28,10 @@ namespace HomeBudgetWebApp.Models.Entities.Migration
                         Type = c.Byte(nullable: false),
                         PayeeId = c.Int(nullable: false),
                         CategoryId = c.Int(nullable: false),
-                        BudgetAccount_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.BudgetAccounts", t => t.BudgetAccount_Id)
-                .Index(t => t.BudgetAccount_Id);
+                .ForeignKey("dbo.BudgetAccounts", t => t.PayeeId, cascadeDelete: true)
+                .Index(t => t.PayeeId);
             
             CreateTable(
                 "dbo.Categories",
@@ -69,9 +68,9 @@ namespace HomeBudgetWebApp.Models.Entities.Migration
         public override void Down()
         {
             DropForeignKey("dbo.SubCategories", "MainCategoryId", "dbo.Categories");
-            DropForeignKey("dbo.Transactions", "BudgetAccount_Id", "dbo.BudgetAccounts");
+            DropForeignKey("dbo.Transactions", "PayeeId", "dbo.BudgetAccounts");
             DropIndex("dbo.SubCategories", new[] { "MainCategoryId" });
-            DropIndex("dbo.Transactions", new[] { "BudgetAccount_Id" });
+            DropIndex("dbo.Transactions", new[] { "PayeeId" });
             DropTable("dbo.SubCategories");
             DropTable("dbo.Payees");
             DropTable("dbo.Categories");
